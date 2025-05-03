@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import ClientWrapper from './components/ClientWrapper';
 import Navbar from './components/Navbar/Navbar';
 import './globals.css';
 
@@ -28,8 +29,10 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Navbar />
-				<div className="py-20">{children}</div>
+				<ClientWrapper>
+					<Navbar />
+					<div className="py-20">{children}</div>
+				</ClientWrapper>
 			</body>
 		</html>
 	);

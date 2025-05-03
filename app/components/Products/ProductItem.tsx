@@ -38,7 +38,7 @@ const ProductItem: FC<Props> = ({ product }) => {
 	const handleDecrementQuantity = () => {
 		setQuantity((quantity) => (quantity == 1 ? 1 : quantity - 1));
 	};
-	console.log(product);
+	// console.log(product);
 
 	return (
 		<div className="flex w-full gap-4">

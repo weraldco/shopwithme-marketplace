@@ -2,35 +2,46 @@ import { CartType } from '@/utils/types';
 import { create } from 'zustand';
 
 type CartStoreType = {
-	cart: CartType | null;
+	cart: CartType[] | null;
+	getCartData: () => Promise<void>;
 	addToCart: (product: CartType) => void;
 	removeToCart: () => void;
 };
 
 export const useCartStore = create<CartStoreType>((set) => ({
 	cart: null,
+
+	getCartData: async () => {
+		try {
+			const getData = localStorage.getItem('cart');
+			if (getData) set({ cart: JSON.parse(getData) });
+		} catch (error) {
+			console.log('Failed to get the data', error);
+		}
+	},
 	addToCart: (product) => {
 		const getData = localStorage.getItem('cart');
 		if (!getData) {
-			localStorage.setItem('cart', JSON.stringify(product));
+			// if localstorage is empty save a new data
+			const data = [product];
+			set({ cart: data });
+			localStorage.setItem('cart', JSON.stringify(data));
 		} else {
-			set({ cart: JSON.parse(getData) });
+			const existingData: CartType[] = JSON.parse(getData);
+			const found = existingData.find(
+				(data) => data.product.title == product.product.title
+			);
+			if (!found) {
+				existingData.push(product);
+				set({ cart: existingData });
+				localStorage.setItem('cart', JSON.stringify(existingData));
+			} else {
+				console.log(product);
+				found.quantity = found.quantity + product.quantity;
+				set({ cart: existingData });
+				localStorage.setItem('cart', JSON.stringify(existingData));
+			}
 		}
-
-		const existingData = [{ name: 'test', quantity: 10 }];
-		const newData = { name: 'test', quantity: 1 };
-
-		const foundData = existingData.find((data) => data.name == newData.name);
-
-		// existingData.push(newData);
-		if (foundData) {
-			foundData.quantity = foundData.quantity + newData.quantity;
-		}
-
-		console.log('ex', existingData);
-		// get all the data from localstorage
-		// iterate the new data from the old datas.
-		// save the data to localstorage
 	},
 	removeToCart: () => {
 		console.log('removing data');
