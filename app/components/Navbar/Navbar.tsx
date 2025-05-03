@@ -1,12 +1,15 @@
 import { IoCartOutline, IoHeartOutline } from 'react-icons/io5';
 
+import Link from 'next/link';
 import { FC } from 'react';
 import Search from './Search';
 
 const Navbar: FC<Props> = () => {
 	return (
-		<div className="fixed  backdrop-blur-xs top-0 w-full p-4 flex justify-between items-center">
-			<div className="text-xl">Logo</div>
+		<div className="fixed backdrop-blur-2xl top-0 w-full p-4 flex justify-between items-center">
+			<Link href="/" className="text-xl">
+				Logo
+			</Link>
 			<div className=" flex items-center justify-center w-[50%]">
 				<Search />
 			</div>
