@@ -6,7 +6,6 @@ import Checkout from "../components/Cart/Checkout";
 const Cart = () => {
   const { cart } = useCartStore();
 
-  console.log(cart);
   if (!cart) return <div>Loading...</div>;
   return (
     <div className="grid w-full max-w-6xl grid-cols-3 justify-center gap-4">
@@ -15,7 +14,7 @@ const Cart = () => {
           <CartItem key={i} data={item} />
         ))}
       </div>
-      <Checkout cart={cart} />
+      <Checkout />
     </div>
   );
 };

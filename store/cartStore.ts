@@ -6,6 +6,8 @@ type CartStoreType = {
   getCartData: () => Promise<void>;
   addToCart: (product: CartType) => void;
   removeToCart: (id: number | string) => void;
+  checkout: CartType[] | null;
+  checkoutChange: (product: CartType) => void;
 };
 
 export const useCartStore = create<CartStoreType>((set, get) => ({
@@ -50,5 +52,31 @@ export const useCartStore = create<CartStoreType>((set, get) => ({
     const cart = get().cart;
     localStorage.removeItem("cart");
     localStorage.setItem("cart", JSON.stringify(cart));
+  },
+
+  checkout: null,
+
+  checkoutChange: (product) => {
+    const checkoutData = get().checkout;
+    // Check if data is empty
+    if (checkoutData) {
+      // Check if product is in data
+      const found = checkoutData.find(
+        (item) => item.product === product.product,
+      );
+      console.log(found);
+      if (found) {
+        const filteredData = checkoutData?.filter(
+          (item) => item.product !== product.product,
+        );
+        set({ checkout: filteredData });
+      } else {
+        checkoutData.push(product);
+        set({ checkout: checkoutData });
+      }
+      // if not empty store the product to checkout
+    } else {
+      set({ checkout: [product] });
+    }
   },
 }));

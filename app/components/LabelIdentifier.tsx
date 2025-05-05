@@ -17,7 +17,7 @@ const LabelIdentifier: FC<Props> = ({
     <div className={`grid grid-flow-col grid-cols-2 ${className}`}>
       <span className={`italic ${titleClass}`}>{title}</span>
       <span className="text-right">
-        {content ? Math.abs(content).toFixed(2) : 0}
+        {content ? `$ ${Math.abs(content).toFixed(2)}` : 0}
       </span>
     </div>
   );

@@ -13,7 +13,7 @@ interface Props {
 }
 
 const CartItem: FC<Props> = ({ data }) => {
-  const { removeToCart } = useCartStore();
+  const { removeToCart, checkoutChange } = useCartStore();
   const [isCheck, setIsCheck] = useState(false);
   const { product, quantity } = data;
   const [currQuantity, setCurrentQuantity] = useState(quantity);
@@ -32,7 +32,9 @@ const CartItem: FC<Props> = ({ data }) => {
 
   const handleCheckToggle = () => {
     setIsCheck((prev) => !prev);
+    checkoutChange(data);
   };
+
   return (
     <div className="flex w-full gap-4 bg-white px-4">
       <div className="flex w-full flex-row items-center gap-4">

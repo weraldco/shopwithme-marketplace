@@ -1,17 +1,14 @@
-import { CartType } from "@/utils/types";
-import { FC } from "react";
+"use client";
+import { useCartStore } from "@/store/cartStore";
 import LabelIdentifier from "../LabelIdentifier";
 
-interface Props {
-  cart: CartType[];
-}
-
-const Checkout: FC<Props> = ({ cart }) => {
-  const subTotal = cart?.reduce(
+const Checkout = () => {
+  const { checkout } = useCartStore();
+  const subTotal = checkout?.reduce(
     (total, curr) => total + curr.product.price * curr.quantity,
     0,
   );
-  const totalDiscount = cart?.reduce(
+  const totalDiscount = checkout?.reduce(
     (total, curr) =>
       total +
       (curr.product.discountPercentage / 100) *
@@ -19,7 +16,7 @@ const Checkout: FC<Props> = ({ cart }) => {
         curr.quantity,
     0,
   );
-  const discountedTotalPrice = cart?.reduce(
+  const discountedTotalPrice = checkout?.reduce(
     (total, curr) =>
       total +
       ((curr.product.discountPercentage / 100) * curr.product.price -
@@ -27,6 +24,10 @@ const Checkout: FC<Props> = ({ cart }) => {
         curr.quantity,
     0,
   );
+
+  const shippingFee = discountedTotalPrice
+    ? (discountedTotalPrice * 7) / 100
+    : 0;
   return (
     <div>
       <div className="flex flex-col gap-4 rounded-lg bg-white p-4">
@@ -45,7 +46,7 @@ const Checkout: FC<Props> = ({ cart }) => {
             />
             <LabelIdentifier
               title="Shipping Fee:"
-              content={12.43}
+              content={shippingFee}
               titleClass="text-sm"
             />
           </div>
