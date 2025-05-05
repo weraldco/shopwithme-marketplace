@@ -3,6 +3,7 @@ import { ProductType } from '@/utils/types';
 import Image from 'next/image';
 import { FC, useState } from 'react';
 import { FaMinus, FaPlus } from 'react-icons/fa6';
+import QuantityButton from '../QuantityButton';
 import Price from './Price';
 import Rating from './Rating';
 
@@ -75,7 +76,8 @@ const ProductItem: FC<Props> = ({ product }) => {
 					<Price
 						price={price}
 						discountPercentage={discountPercentage}
-						className="font-bold text-4xl text-red-400"
+						dollarClass="text-2xl"
+						priceClass="font-bold text-4xl text-red-400"
 					/>
 				</div>
 				<div>{description}</div>
@@ -88,23 +90,11 @@ const ProductItem: FC<Props> = ({ product }) => {
 				</div>
 				<div className="flex items-center gap-2">
 					Quantity:
-					<div className="flex items-center justify-center">
-						<button
-							className="border-1 border-r-0 border-neutral-300 p-2 rounded-l-lg hover:text-neutral-600 duration-200 text-neutral-500"
-							onClick={handleDecrementQuantity}
-						>
-							<FaMinus />
-						</button>
-						<span className="border-1 border-neutral-300 py-1 w-[50px]  duration-200 text-center text-neutral-700">
-							{quantity}
-						</span>
-						<button
-							className="border-1 border-l-0 border-neutral-300 p-2 rounded-r-lg hover:text-neutral-700 duration-200 text-neutral-500"
-							onClick={handleIncrementQuantity}
-						>
-							<FaPlus />
-						</button>
-					</div>
+					<QuantityButton
+						quantity={quantity}
+						increment={handleIncrementQuantity}
+						decrement={handleDecrementQuantity}
+					/>
 					<div className="text-neutral-400 italic text-sm">
 						{stock} pcs left
 					</div>

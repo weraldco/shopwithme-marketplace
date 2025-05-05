@@ -9,7 +9,7 @@ import Search from './Search';
 const Navbar: FC<Props> = () => {
 	const { cart } = useCartStore();
 	return (
-		<div className="fixed backdrop-blur-2xl top-0 w-full p-4 flex justify-between items-center">
+		<div className="fixed bg-white top-0 w-full p-4 flex justify-between items-center">
 			<Link href="/" className="text-xl">
 				Logo
 			</Link>
@@ -18,12 +18,12 @@ const Navbar: FC<Props> = () => {
 			</div>
 			<div className="flex gap-4 items-center justify-between">
 				<div className="flex  text-xl gap-6 items-center justify-center">
-					<div className="relative">
+					<Link href="/cart" className="group relative">
 						<IoCartOutline className="text-2xl"></IoCartOutline>
-						<span className="text-xs text-white absolute -top-3 -right-4 px-2 py-1 bg-red-400 rounded-full">
+						<span className="text-xs text-white absolute -top-3 -right-4 px-2 py-1 bg-red-400 rounded-full group-hover:bg-red-300 duration-200">
 							{cart?.length}
 						</span>
-					</div>
+					</Link>
 					<IoHeartOutline></IoHeartOutline>
 				</div>
 				<div>sign-up</div>
