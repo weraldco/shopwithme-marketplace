@@ -36,7 +36,7 @@ const CartItem: FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className="flex w-full gap-4 bg-white px-4">
+    <div className="flex w-full gap-4 rounded bg-white px-4">
       <div className="flex w-full flex-row items-center gap-4">
         <div className="h-4 w-4">
           <input
