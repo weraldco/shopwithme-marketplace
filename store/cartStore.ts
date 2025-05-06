@@ -64,7 +64,6 @@ export const useCartStore = create<CartStoreType>((set, get) => ({
       const found = checkoutData.find(
         (item) => item.product === product.product,
       );
-      console.log(found);
       if (found) {
         const filteredData = checkoutData?.filter(
           (item) => item.product !== product.product,
