@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ClientWrapper from "./components/ClientWrapper";
 import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Navbar/Sidebar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <ClientWrapper>
           <Navbar />
+          <Sidebar />
           <div className="flex h-screen items-start justify-center py-20">
             {children}
           </div>
