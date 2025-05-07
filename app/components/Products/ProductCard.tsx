@@ -20,14 +20,14 @@ const ProductCard: FC<Props> = ({ product }) => {
   return (
     <Link
       href={`/product/${id}`}
-      className="flex flex-1 flex-col gap-4 rounded pb-2"
+      className="group flex flex-1 flex-col gap-4 rounded pb-2"
     >
       {/* Product title */}
 
-      <div className="max-w-lg rounded bg-neutral-200/50 p-6">
+      <div className="max-w-lg rounded bg-neutral-100/80 p-6 duration-200 group-hover:bg-neutral-200/50 group-hover:shadow-md group-active:bg-neutral-200/90">
         <Image
-          width={500}
-          height={500}
+          width={200}
+          height={200}
           src={thumbnail}
           alt={title}
           priority

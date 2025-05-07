@@ -9,19 +9,20 @@ interface Props {
 
 const CategoryCard: FC<Props> = ({ data }) => {
   return (
-    <Link href={`/search?q=${data.slug.toLowerCase()}`}>
-      <div className="flex flex-col gap-2">
-        <div className="max-w-lg rounded bg-neutral-200/50 p-6">
-          <Image
-            width={500}
-            height={500}
-            src={data.thumbnail}
-            alt={data.thumbnail}
-            priority
-          ></Image>
-        </div>
-        <div className="flex items-center justify-center">{data.name}</div>
+    <Link
+      href={`/search?q=${data.slug.toLowerCase()}`}
+      className="group flex flex-col gap-2"
+    >
+      <div className="max-w-lg rounded bg-neutral-100/80 p-6 duration-200 group-hover:bg-neutral-200/50 group-hover:shadow-md group-active:bg-neutral-200/90">
+        <Image
+          width={300}
+          height={300}
+          src={data.thumbnail}
+          alt={data.thumbnail}
+          priority
+        ></Image>
       </div>
+      <div className="flex items-center justify-center">{data.name}</div>
     </Link>
   );
 };
