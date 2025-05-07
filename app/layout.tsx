@@ -33,7 +33,7 @@ export default function RootLayout({
         <ClientWrapper>
           <Navbar />
           <Sidebar />
-          <div className="flex h-screen items-start justify-center py-20">
+          <div className="flex h-screen items-start justify-center py-10">
             {children}
           </div>
         </ClientWrapper>

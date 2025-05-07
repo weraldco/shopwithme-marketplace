@@ -7,11 +7,7 @@ import SaleProduct from "./components/Products/SaleProduct";
 
 const Home = () => {
   const { products, category } = useProductStore();
-  console.log(products);
-  console.log("C", category);
-
   const sale = products?.filter((product) => product.discountPercentage > 15);
-  console.log(sale);
   if (!products || !sale) return <div>Loading...</div>;
   return (
     <div>

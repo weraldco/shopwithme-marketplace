@@ -1,5 +1,6 @@
 import { CategoryType } from "@/utils/types";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 const CategoryCard: FC<Props> = ({ data }) => {
   return (
-    <div>
+    <Link href={`/search?q=${data.slug.toLowerCase()}`}>
       <div className="flex rounded bg-neutral-100 p-2">
         <Image
           src={data.thumbnail}
@@ -19,7 +20,7 @@ const CategoryCard: FC<Props> = ({ data }) => {
         />
       </div>
       <div className="flex items-center justify-center">{data.name}</div>
-    </div>
+    </Link>
   );
 };
 
