@@ -9,9 +9,9 @@ type ProductStore = {
   searchedProduct: ProductType[] | null;
   category: CategoryType[] | null;
   fetchAllProducts: () => Promise<void>;
+  fetchMoreProducts: (limit: number) => Promise<void>;
   fetchSingleProduct: (id: number) => Promise<void>;
   getAllCategory: () => Promise<void>;
-  // searchProductByQuery: (query: string) => Promise<void>;
   searchProduct: (query: ReadonlyURLSearchParams) => Promise<void>;
 };
 
@@ -24,7 +24,19 @@ export const useProductStore = create<ProductStore>((set, get) => ({
   fetchAllProducts: async () => {
     try {
       const response = await fetch(
-        "https://dummyjson.com/products?limit=0&skip=0",
+        "https://dummyjson.com/products?limit=30&skip=0",
+      );
+      const data = await response.json();
+      set({ products: data.products });
+    } catch (error) {
+      console.error("Failed fetching products", error);
+    }
+  },
+
+  fetchMoreProducts: async (limit: number) => {
+    try {
+      const response = await fetch(
+        `https://dummyjson.com/products?limit=${limit}&skip=0`,
       );
       const data = await response.json();
       set({ products: data.products });
@@ -52,18 +64,6 @@ export const useProductStore = create<ProductStore>((set, get) => ({
     }
   },
 
-  // searchProductByQuery: async (query: string | null) => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://dummyjson.com/products/search?q=${query}`,
-  //     );
-  //     const data = await response.json();
-  //     // set({ searchedProduct: data.products });
-  //   } catch (error) {
-  //     console.error("Failed fetching data", error);
-  //   }
-  // },
-
   searchProduct: async (query: ReadonlyURLSearchParams | null) => {
     try {
       const q = query?.get("q");
@@ -72,13 +72,8 @@ export const useProductStore = create<ProductStore>((set, get) => ({
 
       if (products) {
         if (q) {
-          result = products.filter(
-            (product) =>
-              product.category.toLowerCase().includes(q.toLowerCase()) ||
-              product.title.toLowerCase().includes(q.toLowerCase()) ||
-              (product.brand &&
-                product.brand.toLowerCase().includes(q.toLowerCase())) ||
-              (product.tags && product.tags.includes(q.toLowerCase())),
+          result = products.filter((product) =>
+            product.category.toLowerCase().includes(q.toLowerCase()),
           );
         }
 

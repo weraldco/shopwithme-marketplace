@@ -9,7 +9,7 @@ import SaleProduct from "./components/Products/SaleProduct";
 
 const Home = () => {
   const { products, category } = useProductStore();
-  const sale = products?.filter((product) => product.discountPercentage > 15);
+  const sale = products?.filter((product) => product.discountPercentage > 10);
   if (!products || !sale) return <div>Loading...</div>;
   return (
     <ResponsiveLayout>
@@ -17,7 +17,7 @@ const Home = () => {
         <Hero />
         <SaleProduct data={sale} />
         <CategoryList category={category} />
-        <ProductList data={products} />
+        <ProductList />
         {/*
          */}
       </div>

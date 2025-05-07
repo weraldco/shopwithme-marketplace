@@ -1,6 +1,5 @@
 export const categoryData = [
   {
-    title: "beauty",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
     name: "Beauty",
@@ -8,7 +7,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/beauty",
   },
   {
-    title: "fragrances",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp",
     name: "Fragrances",
@@ -16,7 +14,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/fragrances",
   },
   {
-    title: "furniture",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp",
     name: "Furniture",
@@ -24,7 +21,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/furniture",
   },
   {
-    title: "groceries",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/groceries/apple/thumbnail.webp",
     name: "Groceries",
@@ -32,16 +28,13 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/groceries",
   },
   {
-    title: "home-decoration",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/thumbnail.webp",
     name: "Home Decoration",
     slug: "home-decoration",
     url: "https://dummyjson.com/products/category/home-decoration",
   },
-  ,
   {
-    title: "kitchen-accessories",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/thumbnail.webp",
     name: "Kitchen Accessories",
@@ -49,7 +42,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/kitchen-accessories",
   },
   {
-    title: "laptops",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
     name: "Laptops",
@@ -57,7 +49,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/laptops",
   },
   {
-    title: "mens-shirts",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/thumbnail.webp",
     name: "Mens Shirts",
@@ -65,7 +56,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/mens-shirts",
   },
   {
-    title: "mens-shoes",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/2.webp",
     name: "Mens Shirts",
@@ -73,7 +63,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/mens-shirts",
   },
   {
-    title: "mens-watches",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
     name: "Mens Shoes",
@@ -81,7 +70,6 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/mens-shoes",
   },
   {
-    title: "mobile-accessories",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
     name: "Mobile Accessories",
@@ -89,11 +77,94 @@ export const categoryData = [
     url: "https://dummyjson.com/products/category/mobile-accessories",
   },
   {
-    title: "motorcycle",
     thumbnail:
       "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
     name: "Motorcycle",
     slug: "motorcycle",
     url: "https://dummyjson.com/products/category/motorcycle",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "skin-care",
+    name: "Skin Care",
+    url: "https://dummyjson.com/products/category/skin-care",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "smartphones",
+    name: "Smartphones",
+    url: "https://dummyjson.com/products/category/smartphones",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "sports-accessories",
+    name: "Sports Accessories",
+    url: "https://dummyjson.com/products/category/sports-accessories",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "sunglasses",
+    name: "Sunglasses",
+    url: "https://dummyjson.com/products/category/sunglasses",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "tablets",
+    name: "Tablets",
+    url: "https://dummyjson.com/products/category/tablets",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "tops",
+    name: "Tops",
+    url: "https://dummyjson.com/products/category/tops",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "vehicle",
+    name: "Vehicle",
+    url: "https://dummyjson.com/products/category/vehicle",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "womens-bags",
+    name: "Womens Bags",
+    url: "https://dummyjson.com/products/category/womens-bags",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "womens-dresses",
+    name: "Womens Dresses",
+    url: "https://dummyjson.com/products/category/womens-dresses",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "womens-jewellery",
+    name: "Womens Jewellery",
+    url: "https://dummyjson.com/products/category/womens-jewellery",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "womens-shoes",
+    name: "Womens Shoes",
+    url: "https://dummyjson.com/products/category/womens-shoes",
+  },
+  {
+    thumbnail:
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+    slug: "womens-watches",
+    name: "Womens Watches",
+    url: "https://dummyjson.com/products/category/womens-watches",
   },
 ];

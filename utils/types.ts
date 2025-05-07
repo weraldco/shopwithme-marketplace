@@ -31,7 +31,6 @@ export type CartType = {
   quantity: number;
 };
 export type CategoryType = {
-  title: string;
   thumbnail: string;
   slug: string;
   name: string;

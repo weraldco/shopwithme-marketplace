@@ -24,7 +24,7 @@ const ProductCard: FC<Props> = ({ product }) => {
     >
       {/* Product title */}
 
-      <div className="max-w-lg rounded bg-neutral-100/80 p-6 duration-200 group-hover:bg-neutral-200/50 group-hover:shadow-md group-active:bg-neutral-200/90">
+      <div className="max-w-lg rounded bg-neutral-100/80 p-2 duration-200 group-hover:bg-neutral-200/50 group-hover:shadow-md group-active:bg-neutral-200/90">
         <Image
           width={200}
           height={200}
