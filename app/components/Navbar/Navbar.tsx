@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FC } from "react";
 import Search from "./Search";
 
-const Navbar: FC<Props> = () => {
+const Navbar: FC = () => {
   const { cart } = useCartStore();
   return (
     <div className="fixed top-0 flex w-full items-center justify-between bg-white p-4">

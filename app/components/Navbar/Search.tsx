@@ -19,6 +19,7 @@ const Search = () => {
       <Link
         href={`/search?q=${searchQuery}`}
         className="absolute top-0 right-0 cursor-pointer rounded-r bg-red-400 p-3 text-white"
+        onClick={() => setSearchQuery("")}
       >
         <IoSearchOutline />
       </Link>

@@ -1,16 +1,23 @@
 "use client";
 
 import { useProductStore } from "@/store/productStore";
-import ProductCard from "./components/Products/ProductCard";
+import CategoryList from "./components/Category/CategoryList";
+import ProductList from "./components/Products/ProductList";
+import SaleProduct from "./components/Products/SaleProduct";
 
 const Home = () => {
-  const { products } = useProductStore();
-  if (!products) return <div>Loading...</div>;
+  const { products, category } = useProductStore();
+  console.log(products);
+  console.log("C", category);
+
+  const sale = products?.filter((product) => product.discountPercentage > 15);
+  console.log(sale);
+  if (!products || !sale) return <div>Loading...</div>;
   return (
-    <div className="grid grid-cols-1 place-items-center gap-4 bg-white px-4 md:grid-cols-3 xl:grid-cols-5">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div>
+      <SaleProduct data={sale} />
+      <CategoryList category={category} />
+      <ProductList data={products} />
     </div>
   );
 };
