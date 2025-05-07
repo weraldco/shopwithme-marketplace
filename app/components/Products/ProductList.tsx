@@ -1,5 +1,6 @@
 import { ProductType } from "@/utils/types";
 import { FC } from "react";
+import ContentWrapper from "../ContentWrapper";
 import ProductCard from "./ProductCard";
 
 interface Props {
@@ -9,9 +10,8 @@ interface Props {
 const ProductList: FC<Props> = ({ data }) => {
   if (!data) return <div>Loading...</div>;
   return (
-    <div>
-      <h1 className="text-2xl">All Products</h1>
-      <div className="grid grid-cols-1 place-items-center gap-4 bg-white px-4 md:grid-cols-3 xl:grid-cols-6">
+    <ContentWrapper title="All Products">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         {data.slice(0, 24).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -21,7 +21,7 @@ const ProductList: FC<Props> = ({ data }) => {
           Load More
         </button>
       </div>
-    </div>
+    </ContentWrapper>
   );
 };
 

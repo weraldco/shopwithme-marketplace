@@ -16,8 +16,10 @@ const Home = () => {
       <div className="flex flex-col gap-4">
         <Hero />
         <SaleProduct data={sale} />
-        {/* <CategoryList category={category} />
-      <ProductList data={products} /> */}
+        <CategoryList category={category} />
+        <ProductList data={products} />
+        {/*
+         */}
       </div>
     </ResponsiveLayout>
   );
