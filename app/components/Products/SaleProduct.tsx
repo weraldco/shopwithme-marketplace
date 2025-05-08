@@ -9,7 +9,12 @@ interface Props {
 
 const SaleProduct: FC<Props> = ({ data }) => {
   return (
-    <ContentWrapper title="Speacial Deals">
+    <ContentWrapper
+      title="Speacial Deals"
+      isActiveLink
+      link="/sale"
+      linkTitle="All Special Deals"
+    >
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         {data.slice(0, 6).map((product) => (
           <ProductCard key={product.id} product={product} />

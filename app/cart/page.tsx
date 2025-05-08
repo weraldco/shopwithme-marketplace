@@ -2,11 +2,12 @@
 import { useCartStore } from "@/store/cartStore";
 import CartItem from "../components/Cart/CartItem";
 import Checkout from "../components/Cart/Checkout";
+import LoadingState from "../components/LoadingState";
 
 const Cart = () => {
   const { cart } = useCartStore();
 
-  if (!cart) return <div>Loading...</div>;
+  if (!cart) return <LoadingState />;
   return (
     <div className="flex h-screen w-full justify-center bg-neutral-100 py-4">
       <div className="flex flex-col gap-4">

@@ -9,15 +9,15 @@ interface Props {
 
 const ClientWrapper: FC<Props> = ({ children }) => {
   const { getCartData } = useCartStore();
-  const { fetchAllProducts, getAllCategory } = useProductStore();
+  const { getAllCategory, fetchMoreProducts } = useProductStore();
 
   useEffect(() => {
     getCartData();
   }, [getCartData]);
 
   useEffect(() => {
-    fetchAllProducts();
-  }, [fetchAllProducts]);
+    fetchMoreProducts(0);
+  }, [fetchMoreProducts]);
 
   useEffect(() => {
     getAllCategory();

@@ -3,11 +3,12 @@ import { useProductStore } from "@/store/productStore";
 import CategoryCard from "../components/Category/CategoryCard";
 import ContentWrapper from "../components/ContentWrapper";
 import ResponsiveLayout from "../components/Layout/ResponsiveLayout";
+import LoadingState from "../components/LoadingState";
 
 const CategorySection = () => {
   const { category } = useProductStore();
   console.log(category);
-  if (!category) return <div>Loading..</div>;
+  if (!category) return <LoadingState />;
   return (
     <ResponsiveLayout>
       <ContentWrapper title="All Categories">

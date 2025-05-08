@@ -4,17 +4,13 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import ContentWrapper from "../components/ContentWrapper";
 import ResponsiveLayout from "../components/Layout/ResponsiveLayout";
+import LoadingState from "../components/LoadingState";
 import ProductCard from "../components/Products/ProductCard";
 
 const SearchPage = () => {
-  const { searchedProduct, searchProduct, products, fetchMoreProducts } =
-    useProductStore();
+  const { searchedProduct, searchProduct, products } = useProductStore();
   const query = useSearchParams();
   const q = query.get("q");
-
-  useEffect(() => {
-    fetchMoreProducts(0);
-  }, [fetchMoreProducts]);
 
   useEffect(() => {
     searchProduct(query);
@@ -23,7 +19,7 @@ const SearchPage = () => {
   if (q == null) return <div>Page not accessible!</div>;
 
   if (!searchedProduct) {
-    return <div>Loading...</div>;
+    return <LoadingState />;
   }
   return (
     <ResponsiveLayout>
