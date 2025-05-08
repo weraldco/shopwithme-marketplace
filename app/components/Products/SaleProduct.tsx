@@ -1,6 +1,7 @@
 import { ProductType } from "@/utils/types";
 import { FC } from "react";
 import ContentWrapper from "../ContentWrapper";
+import ResponsiveContainer from "../Layout/ResponsiveContainer";
 import ProductCard from "./ProductCard";
 
 interface Props {
@@ -15,11 +16,11 @@ const SaleProduct: FC<Props> = ({ data }) => {
       link="/sale"
       linkTitle="All Special Deals"
     >
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <ResponsiveContainer>
         {data.slice(0, 6).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
+      </ResponsiveContainer>
     </ContentWrapper>
   );
 };

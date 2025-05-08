@@ -1,6 +1,7 @@
 import { CategoryType } from "@/utils/types";
 import { FC } from "react";
 import ContentWrapper from "../ContentWrapper";
+import ResponsiveContainer from "../Layout/ResponsiveContainer";
 import CategoryCard from "./CategoryCard";
 
 interface Props {
@@ -16,11 +17,11 @@ const CategoryList: FC<Props> = ({ category }) => {
       link="/category"
       linkTitle="All categories"
     >
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <ResponsiveContainer>
         {category.slice(0, 12).map((cat, i) => (
           <CategoryCard data={cat} key={i} />
         ))}
-      </div>
+      </ResponsiveContainer>
     </ContentWrapper>
   );
 };

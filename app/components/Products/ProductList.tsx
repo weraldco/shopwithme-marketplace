@@ -1,6 +1,7 @@
 import { useProductStore } from "@/store/productStore";
 import { useState } from "react";
 import ContentWrapper from "../ContentWrapper";
+import ResponsiveContainer from "../Layout/ResponsiveContainer";
 import LoadMoreButton from "../LoadMoreButton";
 import ProductCard from "./ProductCard";
 
@@ -15,11 +16,11 @@ const ProductList = () => {
   };
   return (
     <ContentWrapper title="All Products">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <ResponsiveContainer>
         {products.slice(0, numberProduct).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
+      </ResponsiveContainer>
 
       <LoadMoreButton handleClick={handleClick} />
     </ContentWrapper>

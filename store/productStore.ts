@@ -67,13 +67,16 @@ export const useProductStore = create<ProductStore>((set, get) => ({
   searchProduct: async (query: ReadonlyURLSearchParams | null) => {
     try {
       const q = query?.get("q");
+
       let result: ProductType[] = [];
       const products = get().products;
 
       if (products) {
-        if (q) {
-          result = products.filter((product) =>
-            product.category.toLowerCase().includes(q.toLowerCase()),
+        if (q && products) {
+          result = products.filter(
+            (product) =>
+              product.category.toLowerCase().includes(q.toLowerCase()) ||
+              product.title.toLocaleLowerCase().includes(q.toLowerCase()),
           );
         }
 

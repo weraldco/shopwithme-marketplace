@@ -3,6 +3,7 @@ import { useProductStore } from "@/store/productStore";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import ContentWrapper from "../components/ContentWrapper";
+import ResponsiveContainer from "../components/Layout/ResponsiveContainer";
 import ResponsiveLayout from "../components/Layout/ResponsiveLayout";
 import LoadingState from "../components/LoadingState";
 import ProductCard from "../components/Products/ProductCard";
@@ -23,14 +24,13 @@ const SearchPage = () => {
   }
   return (
     <ResponsiveLayout>
-      <ContentWrapper>
+      <ContentWrapper title={`Search Result: ${q}`}>
         <div className="flex flex-col gap-4">
-          <h1 className="text-xl">Search result: {q}</h1>
-          <div className="grid grid-cols-6 gap-4">
+          <ResponsiveContainer>
             {searchedProduct.map((product, i) => (
               <ProductCard key={i} product={product} />
             ))}
-          </div>
+          </ResponsiveContainer>
         </div>
       </ContentWrapper>
     </ResponsiveLayout>
