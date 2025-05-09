@@ -29,8 +29,8 @@ const Navbar: FC = () => {
               </Link>
               <IoHeartOutline></IoHeartOutline>
             </div>
-            <div>sign-up</div>
-            <div>sign-in</div>
+            <Link href="/auth/register">Sign-Up</Link>
+            <Link href="/auth/login">Sign-In</Link>
           </div>
         </div>
       </ResponsiveLayout>

@@ -13,18 +13,26 @@ const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
+  fullName: z
+    .string()
+    .min(8, { message: "Fullname must be 8 characters long.." }),
   password: z
+    .string()
+    .min(4, { message: "Password must be 4 characters long.." }),
+  repeatPassword: z
     .string()
     .min(4, { message: "Password must be 4 characters long.." }),
 });
 
-const LoginForm = () => {
+const RegistrationForm = () => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      fullName: "",
       password: "",
+      repeatPassword: "",
     },
   });
 
@@ -51,9 +59,22 @@ const LoginForm = () => {
               />
               <InputField
                 form={form.control}
+                placeholder="Enter your fullname.."
+                fieldLabel="Fullname"
+                fieldName="fullName"
+              />
+              <InputField
+                form={form.control}
                 placeholder="Enter your password.."
                 fieldLabel="Password"
                 fieldName="password"
+                type="password"
+              />
+              <InputField
+                form={form.control}
+                placeholder="Repeat your password.."
+                fieldLabel="Repeat Password"
+                fieldName="repeatPassword"
                 type="password"
               />
               <Button type="submit" className="w-full py-6">
@@ -67,4 +88,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;
