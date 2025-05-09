@@ -1,8 +1,4 @@
-import { FC } from "react";
-
-interface Props {}
-
-const Sidebar: FC<Props> = () => {
+const Sidebar = () => {
   return <div>Sidebar</div>;
 };
 

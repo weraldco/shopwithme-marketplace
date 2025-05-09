@@ -23,14 +23,6 @@ const Search = () => {
       >
         <IoSearchOutline />
       </Link>
-      {/* <button
-        className="absolute top-0 right-0 cursor-pointer rounded-r bg-red-400 p-3 text-white"
-        onClick={() => {
-          toggleSearch(searchQuery);
-        }}
-      >
-        <IoSearchOutline />
-      </button> */}
     </div>
   );
 };
