@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FC, useState } from "react";
 import ContentWrapper from "../ContentWrapper";
 import ResponsiveLayout from "../Layout/ResponsiveLayout";
+import LoadingState from "../LoadingState";
 import QuantityButton from "../QuantityButton";
 import Price from "./Price";
 import Rating from "./Rating";
@@ -15,6 +16,11 @@ interface Props {
 
 const ProductItem: FC<Props> = ({ product }) => {
   const { addToCart } = useCartStore();
+  const [imageIndex, setImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  if (!product) return <LoadingState />;
+
   const {
     title,
     description,
@@ -29,8 +35,6 @@ const ProductItem: FC<Props> = ({ product }) => {
     warrantyInformation,
     stock,
   } = product;
-  const [imageIndex, setImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
 
   const handleIncrementQuantity = () => {
     setQuantity((quantity) => (quantity < stock ? quantity + 1 : stock));
@@ -39,6 +43,7 @@ const ProductItem: FC<Props> = ({ product }) => {
   const handleDecrementQuantity = () => {
     setQuantity((quantity) => (quantity == 1 ? 1 : quantity - 1));
   };
+
   return (
     <ResponsiveLayout>
       <div className="flex flex-col gap-4">

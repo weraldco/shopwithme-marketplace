@@ -14,7 +14,7 @@ const Home = () => {
   if (!products || !sale) return <LoadingState />;
   return (
     <ResponsiveLayout>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 p-4 md:p-0">
         <Hero />
         <SaleProduct data={sale} />
         <CategoryList category={category} />

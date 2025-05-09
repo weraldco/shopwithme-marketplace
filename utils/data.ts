@@ -85,84 +85,84 @@ export const categoryData = [
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
     slug: "skin-care",
     name: "Skin Care",
     url: "https://dummyjson.com/products/category/skin-care",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
     slug: "smartphones",
     name: "Smartphones",
     url: "https://dummyjson.com/products/category/smartphones",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/thumbnail.webp",
     slug: "sports-accessories",
     name: "Sports Accessories",
     url: "https://dummyjson.com/products/category/sports-accessories",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp",
     slug: "sunglasses",
     name: "Sunglasses",
     url: "https://dummyjson.com/products/category/sunglasses",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp",
     slug: "tablets",
     name: "Tablets",
     url: "https://dummyjson.com/products/category/tablets",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/thumbnail.webp",
     slug: "tops",
     name: "Tops",
     url: "https://dummyjson.com/products/category/tops",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/thumbnail.webp",
     slug: "vehicle",
     name: "Vehicle",
     url: "https://dummyjson.com/products/category/vehicle",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/thumbnail.webp",
     slug: "womens-bags",
     name: "Womens Bags",
     url: "https://dummyjson.com/products/category/womens-bags",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/thumbnail.webp",
     slug: "womens-dresses",
     name: "Womens Dresses",
     url: "https://dummyjson.com/products/category/womens-dresses",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
     slug: "womens-jewellery",
     name: "Womens Jewellery",
     url: "https://dummyjson.com/products/category/womens-jewellery",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
     slug: "womens-shoes",
     name: "Womens Shoes",
     url: "https://dummyjson.com/products/category/womens-shoes",
   },
   {
     thumbnail:
-      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/thumbnail.webp",
     slug: "womens-watches",
     name: "Womens Watches",
     url: "https://dummyjson.com/products/category/womens-watches",

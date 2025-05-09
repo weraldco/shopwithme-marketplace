@@ -10,18 +10,20 @@ interface Props {
 
 const SaleProduct: FC<Props> = ({ data }) => {
   return (
-    <ContentWrapper
-      title="Speacial Deals"
-      isActiveLink
-      link="/sale"
-      linkTitle="All Special Deals"
-    >
-      <ResponsiveContainer>
-        {data.slice(0, 6).map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </ResponsiveContainer>
-    </ContentWrapper>
+    <div className="overflow-hidden md:h-96">
+      <ContentWrapper
+        title="Speacial Deals"
+        isActiveLink
+        link="/sale"
+        linkTitle="All Special Deals"
+      >
+        <ResponsiveContainer>
+          {data.slice(0, 6).map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ResponsiveContainer>
+      </ContentWrapper>
+    </div>
   );
 };
 
