@@ -34,7 +34,7 @@ const Navbar: FC = () => {
               <Link href="/cart" className="group relative">
                 <IoCartOutline className="text-2xl"></IoCartOutline>
                 <span className="absolute -top-3 -right-4 rounded-full bg-red-400 px-2 py-1 text-xs text-white duration-200 group-hover:bg-red-300">
-                  {cart?.length}
+                  {cart && cart.length ? cart.length : 0}
                 </span>
               </Link>
               {/* <IoHeartOutline></IoHeartOutline> */}
